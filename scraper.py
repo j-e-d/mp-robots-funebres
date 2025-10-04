@@ -1,9 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+import datetime
 
 # Step 1: Fetch the webpage
-url = "https://funebres.eldia.com/edis/20251003/funebres2.htm"
+today = datetime.datetime.today().strftime("%Y%m%d")
+url = f"https://funebres.eldia.com/edis/{today}/funebres2.htm"
 response = requests.get(url)
 response.raise_for_status()  # Raise error if request failed
 
